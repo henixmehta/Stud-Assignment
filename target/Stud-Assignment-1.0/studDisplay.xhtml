@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Student Search</title>
+    </h:head>
+    <h:body>
+        <h1>Search Students by Subject</h1>
+        <h:form>
+            <h:outputLabel for="subjectId" value="Enter Subject ID: " />
+            <h:inputText id="subjectId" value="#{studcdibeans.studid}" />
+            <h:commandButton value="Search" action="#{studcdibeans.fetchStudentBySubject}" />
+        </h:form>
+        <h1>Search Results</h1>
+        <h:dataTable value="#{studcdibeans.studentList}" var="student" border="1">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Student ID" />
+                </f:facet>
+                <h:outputText value="#{student.studentid}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Name" />
+                </f:facet>
+                <h:outputText value="#{student.studentname}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Course" />
+                </f:facet>
+                <h:outputText value="#{student.stucourceid.courcename}" />
+            </h:column>
+            <h:column>
+                <h:dataTable value="#{student.subjectCollection}" var="subject" border="0">
+                    <f:facet name="header">
+                        <h:outputText value="Subjects" />
+                    </f:facet>
+                    <h:column>
+                        <h:outputText value="#{subject}" />
+                    </h:column>
+                </h:dataTable>
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</html>

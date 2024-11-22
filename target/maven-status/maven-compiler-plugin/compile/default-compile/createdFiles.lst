@@ -1,0 +1,11 @@
+ejb\StudSessionBeanLocal.class
+entity\Course.class
+ejb\StudSessionBean.class
+cdi\Studcdibeans.class
+com\mycompany\stud\assignment\resources\JakartaEE8Resource.class
+client\StudClient.class
+entity\Subject.class
+rest\studResource.class
+entity\StudentMaster.class
+cdi\Studcdibeans$1.class
+com\mycompany\stud\assignment\JakartaRestConfiguration.class
