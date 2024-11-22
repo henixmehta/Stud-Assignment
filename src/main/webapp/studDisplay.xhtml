@@ -34,12 +34,13 @@
                 <h:outputText value="#{student.stucourceid.courcename}" />
             </h:column>
             <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Subjects" />
+                </f:facet>
+
                 <h:dataTable value="#{student.subjectCollection}" var="subject" border="0">
-                    <f:facet name="header">
-                        <h:outputText value="Subjects" />
-                    </f:facet>
                     <h:column>
-                        <h:outputText value="#{subject}" />
+                        <h:outputText value="#{subject.studentid}" />
                     </h:column>
                 </h:dataTable>
             </h:column>

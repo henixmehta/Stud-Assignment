@@ -47,7 +47,7 @@ public class StudentMaster implements Serializable {
     @Column(name = "studentname")
     private String studentname;
     @JoinTable(name = "student_subject", joinColumns = {
-        @JoinColumn(name = "stud_id", referencedColumnName = "studentid"),
+        @JoinColumn(name = "stud_id", referencedColumnName = "studentid")}, inverseJoinColumns = {
         @JoinColumn(name = "subj_id", referencedColumnName = "subjectid")})
     @ManyToMany
     private Collection<Subject> subjectCollection;
